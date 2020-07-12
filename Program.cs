@@ -4,30 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _3er_triangulo
+namespace ConsoleApp5
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            //Ingresar los respectivos valores de z y c
-            Console.WriteLine("ingrese z: ");
-            double z = double.Parse(Console.ReadLine());
+                {
+                    //Console.Write("cateto Z: ");
+                    //double z = int.Parse(Console.ReadLine());
+                    double z = 3;
 
-            Console.WriteLine("ingrese c: ");
-            double c = double.Parse(Console.ReadLine());
+                    //Console.Write("cateto Y: ");
+                    //double y = int.Parse(Console.ReadLine());
+                    double y = 2;
 
-            //Conversion de grados a radianes
-            double cGrados = c * (180 / Math.PI);
 
-            //Calculo de valores
-            double a = 180 - 90 - c;
-            double t = z / Math.Sin(c);
-            double y = z / Math.Cos(c);
+                    double t = Math.Sqrt((y * y) + (z * z));
+                    double c = Math.Atan(z / y);
+                    double a = Math.Atan(y / z);
 
-            Console.WriteLine("el angulo a es: " + a);
-            Console.WriteLine("la hipotenusa es: " + t);
-            Console.WriteLine("el cateto y es: " + y);
+                    double cGrados = c * (180 / Math.PI);
+                    double aGrados = a * (180 / Math.PI);
+
+                    Console.WriteLine("hipotenusa T es: " + t);
+                    Console.WriteLine("angulo c es: " + cGrados);
+                    Console.WriteLine("angulo a es: " + aGrados);
+
+                }
+            }
         }
-    }
-}
