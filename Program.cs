@@ -4,32 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp5
+namespace ConsoleApp6
 {
     class Program
     {
         static void Main(string[] args)
-                {
-                    //Console.Write("cateto Z: ");
-                    //double z = int.Parse(Console.ReadLine());
-                    double z = 3;
+        {
+            //Ingresar los respectivos valores de z y c
+            Console.WriteLine("ingrese z: ");
+            double z = double.Parse(Console.ReadLine());
 
-                    //Console.Write("cateto Y: ");
-                    //double y = int.Parse(Console.ReadLine());
-                    double y = 2;
+            Console.WriteLine("ingrese c: ");
+            double c = double.Parse(Console.ReadLine());
 
+            //Conversion de grados a radianes
+            double cGrados = c * (180 / Math.PI);
 
-                    double t = Math.Sqrt((y * y) + (z * z));
-                    double c = Math.Atan(z / y);
-                    double a = Math.Atan(y / z);
+            //Calculo de valores
+            double a = 180 - 90 - c;
+            double t = z / Math.Sin(c);
+            double y = z / Math.Cos(c);
 
-                    double cGrados = c * (180 / Math.PI);
-                    double aGrados = a * (180 / Math.PI);
-
-                    Console.WriteLine("hipotenusa T es: " + t);
-                    Console.WriteLine("angulo c es: " + cGrados);
-                    Console.WriteLine("angulo a es: " + aGrados);
-
-                }
-            }
+            Console.WriteLine("el angulo a es: " + a);
+            Console.WriteLine("la hipotenusa es: " + t);
+            Console.WriteLine("el cateto y es: " + y);
         }
+    }
+    }
